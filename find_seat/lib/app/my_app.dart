@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
 
     return FutureBuilder(
       future: Firebase.initializeApp(),
-      // future: Future<bool>.delayed(Duration.zero, ()=>true),
+      // future: Future.sync(() => true),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           final UserRepository userRepository = UserRepository();

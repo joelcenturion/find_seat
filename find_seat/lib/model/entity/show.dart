@@ -11,7 +11,6 @@ class Show extends Equatable {
   late String id;
   late String name;
   late String thumb;
-  late String cover;
   late String trailer;
 
   @JsonKey(name: "release_date")
@@ -43,7 +42,7 @@ class Show extends Equatable {
         id,
         name,
         thumb,
-        cover,
+
         trailer,
         releaseDate,
         rate,
@@ -58,6 +57,6 @@ class Show extends Equatable {
 
   @override
   String toString() {
-    return 'Show{id: $id, name: $name, thumb: $thumb, cover: $cover, releaseDate: $releaseDate, trailer: $trailer, rate: $rate, votes: $votes, tags: $tags, duration: $duration, offers: $offers, totalReviews: $totalReviews, latestReviews: $latestReviews, casts: $casts}';
+    return 'Show{id: $id, name: $name, thumb: $thumb, releaseDate: $releaseDate, trailer: $trailer, rate: $rate, votes: $votes, tags: $tags, duration: $duration, offers: $offers, totalReviews: $totalReviews, latestReviews: $latestReviews, casts: $casts}';
   }
 }

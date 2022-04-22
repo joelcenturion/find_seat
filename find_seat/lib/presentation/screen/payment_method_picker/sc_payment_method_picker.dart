@@ -6,7 +6,7 @@ import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart
 import 'package:find_seat/presentation/custom_ui/custom_ui.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
-import 'package:stripe_payment/stripe_payment.dart';
+// import 'package:stripe_payment/stripe_payment.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,10 +40,10 @@ class _PaymentMethodPickerScreenState extends State<PaymentMethodPickerScreen> {
   void initState() {
     super.initState();
 
-    StripePayment.setOptions(StripeOptions(
-        publishableKey: "pk_test_ZeDmYBSVOpxm7bwr7rNvOz8v",
-        merchantId: "Test",
-        androidPayMode: 'test'));
+    // StripePayment.setOptions(StripeOptions(
+    //     publishableKey: "pk_test_ZeDmYBSVOpxm7bwr7rNvOz8v",
+    //     merchantId: "Test",
+    //     androidPayMode: 'test'));
   }
 
   @override
@@ -135,7 +135,7 @@ class _PaymentMethodPickerScreenState extends State<PaymentMethodPickerScreen> {
     var onError = (error) {
       print('Error. ${error.toString()}');
     };
-
+/*
     StripePayment.paymentRequestWithCardForm(
       CardFormPaymentRequest(
         prefilledInformation: PrefilledInformation(),
@@ -157,7 +157,7 @@ class _PaymentMethodPickerScreenState extends State<PaymentMethodPickerScreen> {
           "Cinema: ${widget.bookTimeSlot.cine.name}";
 
       _showDlgPaymentSuccess(ticketInfo);
-    }).catchError(onError);
+    }).catchError(onError);*/
   }
 
   Future<void> _showDlgPaymentSuccess(String msg) {

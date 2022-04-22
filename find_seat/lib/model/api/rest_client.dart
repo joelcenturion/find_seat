@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 
 part 'rest_client.g.dart';
 
-@RestApi(baseUrl: "http://superman-academy.com/api/findseat/")
+@RestApi(baseUrl: "https://integer.sgp1.digitaloceanspaces.com/findseat")
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 

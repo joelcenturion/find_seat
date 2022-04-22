@@ -57,7 +57,7 @@ dev_dependencies:
   shimmer: ^2.0.0
 
   # Payment
-  stripe_payment: ^1.1.1
+  #stripe_payment: ^1.1.1
   # Auth
   firebase_core: ^1.1.1
   google_sign_in: ^5.0.4

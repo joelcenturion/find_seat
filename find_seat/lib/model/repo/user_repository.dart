@@ -9,7 +9,7 @@ class UserRepository {
       : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
         _googleSignIn = googleSignIn ?? GoogleSignIn();
 
-  Future<User> signInWithGoogle() async {
+  Future<User?> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth =
         await googleUser!.authentication;
@@ -18,11 +18,13 @@ class UserRepository {
 
     await _firebaseAuth.signInWithCredential(credential);
     return Future.value(_firebaseAuth.currentUser);
+    // return null;
   }
 
   Future<void> signInWithCredentials(String email, String password) {
     return _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
+    // return Future.sync(() => true);
   }
 
   Future<void> signUp(
@@ -33,7 +35,7 @@ class UserRepository {
         email: email, password: password);
     var currentUser = _firebaseAuth.currentUser;
 
-    //update info
+    // update info
     await currentUser!.updateDisplayName(displayName);
   }
 
@@ -47,9 +49,11 @@ class UserRepository {
   Future<bool> isSignedIn() async {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
+    return true;
   }
 
   Future<String> getUser() async {
     return _firebaseAuth.currentUser!.displayName!;
+    return 'User';
   }
 }
