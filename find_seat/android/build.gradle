@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.1.0'
         classpath 'com.google.gms:google-services:4.3.10'
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -17,6 +17,9 @@ allprojects {
     repositories {
         jcenter()
 		google()
+		maven {
+			url 'http://download.flutter.io'
+		}
         
     }
 }
